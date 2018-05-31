@@ -1,0 +1,9 @@
+{
+    "short_name": "Voronoi",
+    "name": "Voronoi App Demo",
+    "start_url": "/index.html/?source=pwa",
+    "background_color": "#BCA9F5",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#9F81F7"
+  }

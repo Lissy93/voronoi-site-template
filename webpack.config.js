@@ -76,8 +76,12 @@ module.exports = {
         filename: 'voronoi-styles.css',
       }),
       new CopyWebpackPlugin([
+        // Static Assets
+        { from: 'src/manifest.json', to: '' },
+
+        // Offline fallback for CDN libraries
         { from: 'node_modules/d3/dist/d3.min.js', to: 'lib' },
-        { from: 'node_modules/bulma/css/bulma.min.css', to: 'lib' },
+        { from: 'node_modules/bulma/css/bulma.min.css', to: 'lib' }
       ])
     ]
   };

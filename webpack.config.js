@@ -10,7 +10,7 @@ module.exports = {
   mode: 'production',
 
     entry: {
-      'voroni-app': './src/main.js',
+      'voronoi-app': './src/main.js',
       analytics: './src/google-analytics.js',
   },
 
@@ -18,6 +18,10 @@ module.exports = {
       path: path.join(__dirname, 'dist'),
       publicPath: "/dist/",
       filename: '[name].js'
+    },
+
+    resolve: {
+      extensions: ['.ts', '.js' ]
     },
 
     module: {
@@ -32,6 +36,16 @@ module.exports = {
             }
           }
         },
+
+        {
+          test: /\.ts?$/,
+          loader: 'ts-loader',
+          exclude: /node_modules/,
+          options: {
+            configFile: 'src/tsconfig.json' 
+          }
+        },
+
         {
           test: /\.scss$/,
           use:  [  'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']

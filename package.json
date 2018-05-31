@@ -8,7 +8,8 @@
     "serve": "node server.js",
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "git clean -x && rm -r dist"
   },
   "keywords": [
     "voroni",
@@ -30,6 +31,8 @@
     "optimize-css-assets-webpack-plugin": "^4.0.2",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.9.1",
     "webpack": "^4.10.2",
     "webpack-cli": "^2.1.4"
   },

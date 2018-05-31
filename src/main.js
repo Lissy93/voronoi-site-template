@@ -1,2 +1,2 @@
 import './voronoi-styles.scss'
-import './d3-voronoi.js'
+import './d3-voronoi.ts'

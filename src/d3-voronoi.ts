@@ -1,4 +1,6 @@
 
+declare const d3;
+
 var svg = d3.select("svg").on("touchmove mousemove", moved),
 width = +svg.attr("width"),
 height = +svg.attr("height");

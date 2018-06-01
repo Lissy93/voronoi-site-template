@@ -1,91 +1,133 @@
 
-declare const d3;
+declare const d3; // D3.js is either already bundled by Webpack or fetched via CDN
 
-/* Create the initial SVG and working space */
-const svg = d3.select("svg").on("touchmove mousemove", moved);
-const width = +svg.attr("width");
-const height = +svg.attr("height");
+export default class D3Voronoi{
 
-/* Calculate how many sites to display and generate them */
-const sites = d3.range(300)
-  .map((d) => { return [Math.random() * width, Math.random() * height]; });
+  /* Defining the attrinbuteds */
+  private target;
+  private svg;
+  private height;
+  private width;
+  
+  private voronoi;
+  private sites;
+  private polygon;
+  private link;
+  private site;
 
-/* Initialise the D3 Voroni */
-const voronoi = d3.voronoi()
-  .extent([[-1, -1], [width + 1, height + 1]]);
+  constructor(targetContainer = 'svg'){
+    this.target = targetContainer;
+    this.renderTheAwesome()
+  }
 
-/* Add Polygon for each site */
-let polygon = svg.append("g")
-  .attr("class", "polygons")
-  .selectAll("path")
-  .data(voronoi.polygons(sites))
-  .enter().append("path")
-  .call(redrawPolygon);
+  /**
+   * This is the main render method
+   */
+  public renderTheAwesome(){
 
-/* Add Lines for each polygon */
-let link = svg.append("g")
-  .attr("class", "links")
-  .selectAll("line")
-  .data(voronoi.links(sites))
-  .enter().append("line")
-  .call(redrawLink);
+    this.svg = d3.select('svg');
+    this.width = +this.svg.attr('width');
+    this.height = +this.svg.attr('height');
 
-/* Add the actual Site */
-let site = svg.append("g")
-  .attr("class", "sites")
-  .selectAll("circle")
-  .data(sites)
-  .enter().append("circle")
-  .attr("r", 2.5)
-  .call(redrawSite);
+    /* Calculate how many sites to display and generate them */
+    this.sites = d3.range(300).map((d) => { 
+      return [Math.random() * this.width, Math.random() * this.height]; 
+    });
 
-/**
- * Redraw the appropriate part on mousemove
- */
-function moved() {
-  sites[0] = d3.mouse(this);
-  redraw();
+    /* Add the mouseover event, for highlighting */
+    let that = this;
+    this.svg.on('touchmove mousemove', function(){
+      that.sites[0] = d3.mouse(this);
+      that.redraw();
+    });
+
+    /* Initialise the D3 Voroni */
+    this.voronoi = d3.voronoi()
+      .extent([[-1, -1], [this.width + 1, this.height + 1]]);
+    
+    /* Add Polygon for each site */
+    this.polygon = this.svg.append('g')
+      .attr('class', 'polygons')
+      .selectAll('path')
+      .data(this.voronoi.polygons(this.sites))
+      .enter().append('path')
+      .call(this.redrawPolygon);
+
+    /* Add Lines for each polygon */
+    this.link = this.svg.append('g')
+      .attr('class', 'links')
+      .selectAll('line')
+      .data(this.voronoi.links(this.sites))
+      .enter().append('line')
+      .call(this.redrawLink);
+
+    /* Add the actual Site */
+    this.site = this.svg.append('g')
+      .attr('class', 'sites')
+      .selectAll('circle')
+      .data(this.sites)
+      .enter().append('circle')
+      .attr('r', 2.5)
+      .call(this.redrawSite);
+  }
+
+    /**
+     * Triggers the render methods for polygons, lins and sites
+     */
+    private redraw() {
+      const diagram = this.voronoi(this.sites);
+      this.polygon = this.polygon.data(diagram.polygons()).call(this.redrawPolygon);
+      this.link = this.link.data(diagram.links()),  this.link.exit().remove();
+      this.link = this.link.enter().append('line').merge(this.link).call(this.redrawLink);
+      this.site = this.site.data(this.sites).call(this.redrawSite);
+    }
+
+    /**
+     * Renders a given polygon
+     * @param polygon 
+     */
+    private redrawPolygon(polygon) {
+      polygon
+        .attr('d', (d) => { return d ? 'M' + d.join('L') + 'Z' : null; })
+        .attr('class', (d, i) => { return 'v-' + i % 9; });
+    }
+
+    /**
+     * Sets the dimensions and positions of the links between sites
+     * @param link 
+     */
+    private redrawLink(link) {
+      link
+        .attr('x1', (d) => { return d.source[0]; })
+        .attr('y1', (d) => { return d.source[1]; })
+        .attr('x2', (d) => { return d.target[0]; })
+        .attr('y2', (d) => { return d.target[1]; });
+    }
+
+    /**
+     * Sets dimensions and positions of each given site
+     * @param site 
+     */
+    private redrawSite(site) {
+      site
+        .attr('cx', (d) => { return d[0]; })
+        .attr('cy', (d) => { return d[1]; });
+    }
+
+  /**
+   * Work-around to make the chart work on all (most) screen sizes
+   * @param event
+   */
+  private onWindowResize(event){
+    let resizeTimer = undefined;
+    window.addEventListener('resize', () => {
+      console.log('resized');
+      clearTimeout(resizeTimer);
+      return resizeTimer = setTimeout((() =>
+      this.renderTheAwesome() ), 250);
+    })
+  }
+
+
 }
-
-/**
- * Triggers the render methods for polygons, lins and sites
- */
-function redraw() {
-  const diagram = voronoi(sites);
-  polygon = polygon.data(diagram.polygons()).call(redrawPolygon);
-  link = link.data(diagram.links()), link.exit().remove();
-  link = link.enter().append("line").merge(link).call(redrawLink);
-  site = site.data(sites).call(redrawSite);
-}
-
-/**
- * Renders a given polygon
- * @param polygon 
- */
-function redrawPolygon(polygon) {
-  polygon
-    .attr("d", (d) => { return d ? "M" + d.join("L") + "Z" : null; })
-    .attr('class', (d, i) => { return 'v-' + i % 9; });
-}
-
-/**
- * Sets the dimensions and positions of the links between sites
- * @param link 
- */
-function redrawLink(link) {
-  link
-    .attr("x1", (d) => { return d.source[0]; })
-    .attr("y1", (d) => { return d.source[1]; })
-    .attr("x2", (d) => { return d.target[0]; })
-    .attr("y2", (d) => { return d.target[1]; });
-}
-
-/**
- * Sets dimensions and positions of each given site
- * @param site 
- */
-function redrawSite(site) {
-  site
-    .attr("cx", (d) => { return d[0]; })
-    .attr("cy", (d) => { return d[1]; });
-}
+  

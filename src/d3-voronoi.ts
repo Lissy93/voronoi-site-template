@@ -5,7 +5,7 @@ var svg = d3.select("svg").on("touchmove mousemove", moved),
 width = +svg.attr("width"),
 height = +svg.attr("height");
 
-var sites = d3.range(100)
+var sites = d3.range(300)
 .map(function(d) { return [Math.random() * width, Math.random() * height]; });
 
 var voronoi = d3.voronoi()
@@ -48,7 +48,7 @@ site = site.data(sites).call(redrawSite);
 
 function redrawPolygon(polygon) {
 polygon
-  .attr("d", function(d) { return d ? "M" + d.join("L") + "Z" : null; }).attr('class', function (d, i) { return 'q' + i % 9 + '-9'; });
+  .attr("d", function(d) { return d ? "M" + d.join("L") + "Z" : null; }).attr('class', function (d, i) { return 'v-' + i % 9; });
 }
 
 function redrawLink(link) {

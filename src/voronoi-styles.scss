@@ -1,36 +1,44 @@
-.links {
-    stroke: #0B0B61;
-    stroke-opacity: 0.2;
-  }
-  
-  .polygons {
-    fill: none;
-    stroke: #0B0B61;
-  }
-  
-  .polygons :first-child {
-    fill: #424276;
-  }
-  
-  .sites {
-    fill: #0B0B61;
-    stroke: #fff;
-  }
-  
-  .sites :first-child {
-    fill: #fff;
-  }
-  
 
- .q2-9{
-    fill: pink;
+
+$col-lines: #261f51;
+$col-initial-primary-fill: #261f51;
+
+$col-selected-polygon: #1c1642;
+$col-selected-site-fill: #261f51;
+$col-selected-site-stroke: #261f51;
+
+$col-sites-fill: none;
+$col-sites-line: #261f51;
+
+.links {
+  stroke: $col-lines;
+  stroke-opacity: 0.2;
 }
 
-  .q3-9{
-      fill: green;
-  }
+.polygons {
+  fill: none;
+  stroke: $col-lines;
+}
 
-.yellow{
-    fill: yellow;
-    stroke: aqua;
- }
+.polygons :first-child {
+  fill: $col-selected-polygon;
+}
+
+.sites {
+  fill: $col-sites-fill;
+  stroke: $col-sites-line;
+}
+
+.sites :first-child {
+  fill: $col-selected-site-fill;
+  stroke: $col-selected-site-stroke;
+}
+
+
+@for $von-num from 0 through 9 {
+  .v-#{$von-num} {
+    fill: lighten($col-initial-primary-fill, $von-num*1);
+  }
+}
+
+

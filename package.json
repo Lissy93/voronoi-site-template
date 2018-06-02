@@ -4,12 +4,13 @@
   "description": "Demo site based round a D3 Voronoi diagram",
   "main": "server.js",
   "scripts": {
-    "start": "index.html",
+    "start": "open index.html",
     "serve": "node server.js",
     "build": "webpack",
     "dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "git clean -x && rm -r dist"
+    "clean": "git clean -x && rm -r dist",
+    "postinstall": "webpack"
   },
   "keywords": [
     "voroni",

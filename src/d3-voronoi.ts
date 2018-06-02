@@ -15,9 +15,10 @@ export default class D3Voronoi{
   private link;
   private site;
 
-  constructor(targetContainer = 'svg'){
-    this.target = targetContainer;
+  constructor(targetContainer = '#vonoroi'){
+    this.target = d3.select(targetContainer);
     this.renderTheAwesome()
+    this.watchForResize();
   }
 
   /**
@@ -25,9 +26,12 @@ export default class D3Voronoi{
    */
   public renderTheAwesome(){
 
-    this.svg = d3.select('svg');
-    this.width = +this.svg.attr('width');
-    this.height = +this.svg.attr('height');
+    this.svg = this.target.append("svg");
+    this.width   = this.target.node().getBoundingClientRect().width;
+    this.height = this.target.node().getBoundingClientRect().height;
+
+    this.svg.attr('width', this.width);
+    this.svg.attr('height', this.height);
 
     /* Calculate how many sites to display and generate them */
     this.sites = d3.range(300).map((d) => { 
@@ -114,20 +118,27 @@ export default class D3Voronoi{
         .attr('cy', (d) => { return d[1]; });
     }
 
-  /**
-   * Work-around to make the chart work on all (most) screen sizes
-   * @param event
-   */
-  private onWindowResize(event){
-    let resizeTimer = undefined;
-    window.addEventListener('resize', () => {
-      console.log('resized');
-      clearTimeout(resizeTimer);
-      return resizeTimer = setTimeout((() =>
-      this.renderTheAwesome() ), 250);
-    })
-  }
+    /**
+     * Removes old svg and rerenders a new one
+     * Only used in the (hopefully) rare occasion 
+     * that a user will resize their browser
+     */
+    private rerender(){
+      this.svg.remove();
+      this.renderTheAwesome();
+    }
 
-
+    /**
+     * Work-around to make the chart work on all (most) screen sizes
+     * @param event
+     */
+    private watchForResize(){
+      let resizeTimer = undefined;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        return resizeTimer = setTimeout((() =>
+        this.rerender() ), 250);
+      })
+    }
 }
   

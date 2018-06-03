@@ -3,11 +3,13 @@ html, body{
   padding: 0;
   height:100%;
   width: 100%;
+  position: relative;
 }
 
 #vonoroi{
   min-height: 100%;
   min-width: 100%;
+  position: absolute;
 }
 
 

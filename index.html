@@ -2,24 +2,46 @@
 <html>
     <head>
 
-        <!-- Site Meta Info -->
+        <!-- Site Basic Meta Info -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <!-- Site Basic Name Info -->
         <title>title</title>
         <meta name="author" content="Alicia Sykes">
         <meta name="description" content="Voroni Demo Site">
         <meta name="keywords" content="voroni,d3,demo,lissy93">
+        <meta name="image" content="https://i.imgur.com/QqmRZ6u.gif">
+        <link rel="canonical" href="https://mythbusters.js.org" />
 
         <!-- App Manifest -->
         <link rel="manifest" href="dist/manifest.json">
-        <meta name="theme-color" content="#9F81F7"/>
+        <meta name="theme-color" content="#ECC400"/>
+        
+        <!-- Schema.org for Google -->
+        <meta itemprop="name" content="Vonoroi Template">
+        <meta itemprop="description" content="Voroni JS Demo Site Template">
+        <meta itemprop="image" content="https://i.imgur.com/QqmRZ6u.gif">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="JS MythBusters">
+        <meta name="twitter:description" content="A JavaScript handbook to learn how to use JS language features without losing performance.">
+        <meta name="twitter:image" content="https://i.imgur.com/QqmRZ6u.gif">
+
+        <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+        <meta name="og:title" content="JS MythBusters">
+        <meta name="og:description" content="A JavaScript handbook to learn how to use JS language features without losing performance.">
+        <meta name="og:image" content="https://i.imgur.com/QqmRZ6u.gif">
+        <meta name="og:url" content="https://mythbusters.js.org">
+        <meta name="og:site_name" content="JS MythBusters">
+        <meta name="og:type" content="website">
         
         <!-- Fonts, Icons and Styles -->
         <!-- <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"> -->
+        <link rel="stylesheet" href="https://unpkg.com/docsify/lib/themes/vue.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-        <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-
         <link rel="stylesheet" href="dist/voronoi-styles.css" type="text/css">
 
         <!-- Google Analytics and Error Tracking -->
@@ -42,7 +64,7 @@
       }
     </script>
 
-    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="https://unpkg.com/docsify/lib/docsify.min.js"></script>
   
     <!-- JavaScripts (D3 and voronoi + website scripts) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>

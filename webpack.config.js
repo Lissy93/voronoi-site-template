@@ -81,7 +81,9 @@ module.exports = {
 
         // Offline fallback for CDN libraries
         { from: 'node_modules/d3/dist/d3.min.js', to: 'lib' },
-        { from: 'node_modules/bulma/css/bulma.min.css', to: 'lib' }
+        { from: 'node_modules/bulma/css/bulma.min.css', to: 'lib' },
+        { from: 'node_modules/docsify/lib/docsify.min.js', to: 'lib' },
+        { from: 'node_modules/docsify/lib/themes/vue.css', to: 'lib' }
       ])
     ]
   };

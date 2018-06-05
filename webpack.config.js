@@ -80,10 +80,11 @@ module.exports = {
         { from: 'src/manifest.json', to: '' },
 
         // Offline fallback for CDN libraries
-        { from: 'node_modules/d3/dist/d3.min.js', to: 'lib' },
-        { from: 'node_modules/bulma/css/bulma.min.css', to: 'lib' },
-        { from: 'node_modules/docsify/lib/docsify.min.js', to: 'lib' },
-        { from: 'node_modules/docsify/lib/themes/vue.css', to: 'lib' }
+        { from: 'node_modules/d3/dist/d3.min.js', to: 'lib/js' },
+        { from: 'node_modules/docsify/lib/docsify.min.js', to: 'lib/js' },
+        { from: 'node_modules/bulma/css/bulma.min.css', to: 'lib/css' },
+        { from: 'node_modules/docsify/lib/themes/vue.css', to: 'lib/css' },
+        { from: 'node_modules/font-awesome/css/font-awesome.min.css', to: 'lib/css' }
       ])
     ]
   };

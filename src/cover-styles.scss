@@ -49,4 +49,23 @@ section.cover .cover-main{
         }
     }
 
+    .cover-footer{
+        position: absolute;
+        bottom: 2em;
+        width: 100%;
+        text-align: center;
+
+        a{
+            display: inline-block;
+            color: $col-cover-primary;
+            padding: 1em 2em;
+            min-width: 200px;
+            border-radius: 3px;
+            border: 2px solid transparent;
+            &:hover{
+                border: 2px solid $col-cover-primary;
+            }
+        }
+    }
+
 }

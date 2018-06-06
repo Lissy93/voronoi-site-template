@@ -15,7 +15,7 @@ module.exports = {
 
     entry: {
       'voronoi-app': './src/main.js',
-      analytics: './src/google-analytics.js',
+      analytics: './src/scripts/google-analytics.js',
   },
 
     output: {

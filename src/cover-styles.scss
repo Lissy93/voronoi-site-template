@@ -1,8 +1,5 @@
 
-$col-cover-primary: #ecc400;
-$col-cover-secondry: #261f51;
-$col-cover-pale: #E8E8E8;
-$col-cover-dark: #272727;
+@import 'constants.scss';
 
 .github-corner svg{
     fill: $col-cover-primary;

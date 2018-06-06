@@ -1,13 +1,4 @@
-
-$col-lines: #261f51;
-$col-initial-primary-fill: #261f51;
-
-$col-selected-polygon: #ECC400;
-$col-selected-site-fill: #261f51;
-$col-selected-site-stroke: #261f51;
-
-$col-sites-fill: none;
-$col-sites-line: #261f51;
+@import 'constants.scss';
 
 .links {
   stroke: $col-lines;

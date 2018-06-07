@@ -33,6 +33,8 @@ export default class D3Voronoi{
     this.svg.attr('width', this.width);
     this.svg.attr('height', this.height);
 
+    this.mouseLeaveEvents();
+
     /* Calculate how many sites to display and generate them */
     this.sites = d3.range(300).map((d) => { 
       return [Math.random() * this.width, Math.random() * this.height]; 
@@ -140,5 +142,12 @@ export default class D3Voronoi{
         this.rerender() ), 250);
       })
     }
+
+    private mouseLeaveEvents(){
+      let that = this;
+      this.svg.on('mouseleave', function() {   
+        d3.selectAll('.polygons :first-child').attr('class', 'deselect-polygon');
+      });
+  }
 }
   

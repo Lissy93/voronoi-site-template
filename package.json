@@ -27,6 +27,8 @@
     "babel-loader": "^8.0.0-beta.3",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
+    "handlebars-webpack-plugin": "^1.4.2",
+    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
     "optimize-css-assets-webpack-plugin": "^4.0.2",
@@ -34,8 +36,8 @@
     "style-loader": "^0.21.0",
     "ts-loader": "^4.3.0",
     "typescript": "^2.9.1",
-    "webpack": "^4.10.2",
-    "webpack-cli": "^2.1.4"
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.2"
   },
   "dependencies": {
     "bulma": "^0.7.1",
@@ -43,6 +45,7 @@
     "d3": "^5.4.0",
     "docsify": "^4.6.10",
     "font-awesome": "^4.7.0",
+    "raleway-webfont": "^3.0.1",
     "serve-static": "^1.13.2"
   }
 }

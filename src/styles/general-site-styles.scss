@@ -1,0 +1,22 @@
+
+@import 'constants.scss';
+
+/* Cover Page Layout */
+html, body{
+    margin: 0;
+    padding: 0;
+    height:100%;
+    width: 100%;
+    position: relative;
+    overflow-y: auto;
+  }
+  #vonoroi{
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+  }
+
+  /* Set fonts */
+  h1, h2, h3, p, span, a, div {
+      font-family: $font;
+  }

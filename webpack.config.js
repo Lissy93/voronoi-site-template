@@ -103,6 +103,7 @@ module.exports = {
         { from: 'node_modules/docsify/lib/docsify.min.js', to: 'lib/js' },
 
         // Offline fallback for CDN libraries - CSS
+        { from: 'node_modules/raleway-webfont/raleway.min.css', to: 'lib/font' },
         { from: 'node_modules/bulma/css/bulma.min.css', to: 'lib/css' },
         { from: 'node_modules/docsify/lib/themes/vue.css', to: 'lib/css' },
         { from: 'node_modules/font-awesome/css/font-awesome.min.css', to: 'lib/css' }

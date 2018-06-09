@@ -6,6 +6,7 @@
         "keywords": "voroni,d3,demo,lissy93",
         "url": "https://lissy93.github.io/voronoi-site-template",
         "color": "#ECC400"
-    }
+    },
+    "show-vonori-chart": true
 
 }

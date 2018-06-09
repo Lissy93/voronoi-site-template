@@ -38,3 +38,12 @@ html, body{
   .markdown-section code, .markdown-section pre>code{
     color: $col-cover-primary;
   }
+
+  /* Color of burger menu */
+  .sidebar-toggle span{
+    background-color: $col-cover-primary;
+  }
+
+  section{
+    background: #FFFFFF;
+  }

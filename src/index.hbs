@@ -52,10 +52,10 @@
   </head>
 
   <body>
-
-    <!-- The main voronoi visual! -->
+    
     <div id="vonoroi"></div>
 
+    
     <div id="app"></div>
 
     <script>
@@ -63,16 +63,19 @@
         name: '{{meta.title}}',
         repo: 'https://github.com/Lissy93/voronoi-site-template',
         homepage: 'readme.md',
-        coverpage: 'docs/cover.md'
+        coverpage: 'pages/cover.md',
+        notFoundPage: 'pages/404.md'
       }
     </script>
 
     <script src="https://unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+
   
     <!-- JavaScripts (D3 and voronoi + website scripts) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
-    <script src="dist/voronoi-app.js"></script>
-
+    <script src="/dist/voronoi-app.js"></script>
+            
   </body>
 
   </html>

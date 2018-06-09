@@ -6,4 +6,4 @@ install:
   - npm i -g yarn webpack webpack-cli webpack-dev-server && yarn
 
 before_script:
-  - yarn prod
+  - yarn run build

@@ -5,7 +5,9 @@
         "description": "Voroni Demo Site",
         "keywords": "voroni,d3,demo,lissy93",
         "url": "https://lissy93.github.io/voronoi-site-template",
-        "color": "#ECC400"
+        "repo": "https://github.com/Lissy93/voronoi-site-template",
+        "color": "#261f51",
+        "ga": "UA-XXXXX-Y"
     },
     "show-vonori-chart": true
 

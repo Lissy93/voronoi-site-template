@@ -101,6 +101,12 @@ module.exports = {
         // Offline fallback for CDN libraries - JS
         { from: 'node_modules/d3/dist/d3.min.js', to: 'lib/js' },
         { from: 'node_modules/docsify/lib/docsify.min.js', to: 'lib/js' },
+        { from: 'node_modules/docsify/lib/plugins/emoji.min.js', to: 'lib/js' },
+        { from: 'node_modules/docsify/lib/plugins/external-script.min.js', to: 'lib/js' },
+        { from: 'node_modules/docsify/lib/plugins/ga.min.js', to: 'lib/js' },
+        { from: 'node_modules/docsify/lib/plugins/gitalk.min.js', to: 'lib/js' },
+        { from: 'node_modules/docsify/lib/plugins/search.min.js', to: 'lib/js' },
+        { from: 'node_modules/docsify/lib/plugins/zoom-image.min.js', to: 'lib/js' },
 
         // Offline fallback for CDN libraries - CSS
         { from: 'node_modules/raleway-webfont/raleway.min.css', to: 'lib/font' },

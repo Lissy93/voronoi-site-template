@@ -4,8 +4,8 @@
 
 <div class="cover-footer">
 [<i class="fas fa-rocket"></i> Showcase](#)
-[<i class="fas fa-desktop"></i> Demo](#)
-[<i class="fas fa-suitcase"></i> License](#)
+[<i class="fas fa-desktop"></i> Demo](/)
+[<i class="fas fa-suitcase"></i> License](/voronoi-site-template/#/LICENSE)
 </div>
 
 [<i class="fab fa-github"></i> Source Code](https://github.com/Lissy93/voronoi-site-template)

@@ -38,4 +38,5 @@ yarn
 
 ## License
 Licensed under MIT, (C) [Alicia Sykes](https://aliciasykes.com) 2018. [Read full License](LICENSE.md).
+
 [![License](https://upload.wikimedia.org/wikipedia/commons/f/f8/License_icon-mit-88x31-2.svg)](LICENSE.md)

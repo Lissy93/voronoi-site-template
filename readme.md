@@ -1,6 +1,15 @@
 # Voronoi Template for Documentation Sites
 
-A small but highly customisable site template, ideal for a project documentation homepage. Inclides an interactive Voronoi chart homepage background.
+A small but highly customisable site template, ideal for a project documentation homepage.
+
+<p align="center">
+  <a href="https://travis-ci.org/Lissy93/voronoi-site-template"><img src="https://travis-ci.org/Lissy93/voronoi-site-template.svg?branch=master" alt="Build Status" /></a>
+  <a href="https://www.codacy.com/app/lissy93/voronoi-site-template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Lissy93/voronoi-site-template&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/42869ef92bb2469e9f92bcf5de15bc94" alt="Codacy Badge" /></a>
+  <a href="https://david-dm.org/Lissy93/voronoi-site-template"><img src="https://david-dm.org/Lissy93/voronoi-site-template/status.svg" alt="dependencies Status" /></a>
+  <a href="https://david-dm.org/Lissy93/voronoi-site-template?type=dev"><img src="https://david-dm.org/Lissy93/voronoi-site-template/dev-status.svg" alt="devDependencies Status" /></a>
+  <a href="https://github.com/Lissy93/voronoi-site-template/commits/master"><img src="https://img.shields.io/maintenance/yes/2018.svg?style=flat-square" alt="Maintenance" /></a>
+  <a href="https://codeclimate.com/github/Lissy93/voronoi-site-template/maintainability"><img src="https://api.codeclimate.com/v1/badges/58e7ee2c035047d1572e/maintainability" alt="Maintainability" /></a>
+</p>
 
 ## Installing
 
@@ -29,3 +38,4 @@ yarn
 
 ## License
 Licensed under MIT, (C) [Alicia Sykes](https://aliciasykes.com) 2018. [Read full License](LICENSE.md).
+[![License](https://upload.wikimedia.org/wikipedia/commons/f/f8/License_icon-mit-88x31-2.svg)](LICENSE.md)

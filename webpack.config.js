@@ -5,6 +5,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HandlebarsPlugin = require("handlebars-webpack-plugin");
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 const webpack = require('webpack');
@@ -74,6 +76,23 @@ module.exports = {
     },
     
   plugins: [ 
+
+      new FaviconsWebpackPlugin({
+        logo: './src/assets/icon.png',
+        prefix: 'icons/',
+        inject: false,
+        persistentCache: false,
+        icons: {
+            android: true,
+            appleIcon: false,
+            appleStartup: false,
+            coast: false,
+            favicons: true,
+            firefox: false,
+            windows: false,
+            yandex: false
+        }
+      }),
       
       new HandlebarsPlugin({
           entry: 'src/index.hbs',
@@ -86,7 +105,7 @@ module.exports = {
       }),
       
       // new HtmlWebpackPlugin({
-      //   template: 'src/index.ejs',
+      //   template: 'src/main.js',
       //   title: 'HTML Webpack Plugin',
       // }),
       

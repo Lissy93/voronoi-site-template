@@ -1,6 +1,11 @@
-# Voronoi Template for Documentation Sites
 
-A small but highly customisable site template, ideal for a project documentation homepage.
+<p align="center">
+
+![Voronoi](dist/assets/cover.png)
+
+> A small but highly customisable site template, ideal for a project documentation homepage.
+
+</p>
 
 <p align="center">
   <a href="https://travis-ci.org/Lissy93/voronoi-site-template"><img src="https://travis-ci.org/Lissy93/voronoi-site-template.svg?branch=master" alt="Build Status" /></a>
@@ -30,7 +35,7 @@ yarn
 - [**`npm run clean`**](package.json#L12) *Removes all generated files and libraries*
 - [**`npm run test`**](package.json#L11) *Executes the test scripts*
 
-*__Note:__ You should only need to modify files within the [`/src`](src/) directory. Anything else will be overidden when webpack builds.*
+*__Note:__ You should only need to modify files within the [`/src`](src/) directory, and the [`*.md`](pages/) files. Anything else will be overidden when webpack builds.*
 
 ## Credits
  - This project uses [Docsify](https://github.com/QingWei-Li/docsify/) to display MD docs and for navigation

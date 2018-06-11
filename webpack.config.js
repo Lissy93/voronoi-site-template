@@ -97,6 +97,7 @@ module.exports = {
       new CopyWebpackPlugin([
         // Static Assets
         { from: 'src/manifest.json', to: '' },
+        { from: 'src/assets', to: 'assets' },
 
         // Offline fallback for CDN libraries - JS
         { from: 'node_modules/d3/dist/d3.min.js', to: 'lib/js' },

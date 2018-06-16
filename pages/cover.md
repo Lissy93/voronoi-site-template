@@ -9,7 +9,7 @@
 </div>
 
 [<i class="fab fa-github"></i> Source Code](https://github.com/Lissy93/voronoi-site-template)
-[<i class="fas fa-book"></i> Get Started](#voronoi-template-for-documentation-sites)
+[<i class="fas fa-book"></i> Get Started](#main)
 
 
 <!-- Backup background color -->

@@ -39,7 +39,7 @@
         <meta name="og:type" content="website">
         
         <!-- Fonts, Icons and Styles -->
-        <link rel="shortcut icon" href="dist/favicon.ico" type="image/vnd.microsoft.icon">
+        <link rel="shortcut icon" href="dist/icons/favicon.ico" type="image/vnd.microsoft.icon">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/docsify/lib/themes/vue.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
@@ -63,13 +63,36 @@
         coverpage: 'pages/cover.md',
         notFoundPage: 'pages/404.md',
         themeColor: '#261f51',
+        auto2top: true,
 
         search: {
           maxAge: 86400000,
           paths: ['readme.md'],
           placeholder: 'Type to search',
           noData: 'No Results!',
-        }
+        },
+
+        plugins: [
+          function (hook) {
+            hook.ready(function () {
+              Window.finishMdRender();
+            })
+          },
+          function (hook) {
+            var footer = [
+              '<hr/>',
+              '<footer>',
+              '<span><a href="https://aliciasykes.com">Alicia Sykes</a> &copy;2019.</span>',
+              '</footer>'
+            ].join('')
+            hook.afterEach(function (html) {
+              return html + footer
+            })
+          }
+        ]
+
+        
+
       }
     </script>
 
